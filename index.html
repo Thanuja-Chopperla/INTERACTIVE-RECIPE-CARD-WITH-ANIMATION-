@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Recipe Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="recipe-card">
+    <h1>🍽 Recipe Viewer</h1>
+
+    <label for="recipeSelect">Choose a recipe:</label>
+    <select id="recipeSelect" onchange="loadRecipe()">
+      <option value="chocolateCake">Chocolate Cake</option>
+      <option value="pasta">Creamy Pasta</option>
+      <option value="sandwich">Grilled Sandwich</option>
+      <option value="iceCream">Vanilla Ice Cream</option>
+      <option value="manchurian">Veg Manchurian</option>
+      <option value="salad">Fresh Veggie Salad</option>
+      <option value="cupcake">Strawberry Cupcake</option>
+      <option value="pizza">Margherita Pizza</option>
+    </select>
+
+    <img id="recipeImage" src="chocolate-cake.jpg" alt="Recipe" class="recipe-image fade-in" />
+
+    <div class="info">
+      <p><strong>Preparation Time:</strong> <span id="prepTime" class="fade-in">45 minutes</span></p>
+      <p><strong>Servings:</strong> <span id="servings" class="fade-in">8 people</span></p>
+    </div>
+
+    <button onclick="toggleSection('ingredients')">Show Ingredients</button>
+    <ul id="ingredients" class="hidden"></ul>
+
+    <button onclick="toggleSection('steps')">Show Steps</button>
+    <ol id="steps" class="hidden"></ol>
+
+    <button onclick="startCooking()">Start Cooking</button>
+    <p id="current-step"></p>
+    <button onclick="nextStep()">Next Step</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
